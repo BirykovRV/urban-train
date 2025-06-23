@@ -10,6 +10,7 @@ func (app *application) routes() http.Handler {
 	mux.HandleFunc("/v1/movies/{id}", app.showMovieHandler)
 	mux.HandleFunc("PATCH /v1/movies/{id}", app.updateMovieHandler)
 	mux.HandleFunc("DELETE /v1/movies/{id}", app.deleteMovieHandler)
+	mux.HandleFunc("/v1/movies", app.listMoviesHandler)
 
 	return mux
 }

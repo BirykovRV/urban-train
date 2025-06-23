@@ -9,6 +9,7 @@ import (
 // looking up a movie that doesn't exist in our database.
 var (
 	ErrRecordNotFound = errors.New("record not found")
+	ErrEditConflict   = errors.New("edit conflict")
 )
 
 // Create a Models struct which wraps the MovieModel. We'll add other models to this,
@@ -26,7 +27,7 @@ func NewModels(db *sql.DB) Models {
 }
 
 func NewMockModels() Models {
-    return Models{
-        Movies: MockMovieModel{},
-    }
+	return Models{
+		Movies: MockMovieModel{},
+	}
 }
