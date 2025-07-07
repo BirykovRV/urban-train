@@ -84,6 +84,10 @@ func (app *application) showMovieHandler(w http.ResponseWriter, r *http.Request)
 
 }
 
+func (app *application) listMoviesHandler(w http.ResponseWriter, r *http.Request) {
+	// TODO: Get all movies from db
+}
+
 func (app *application) updateMovieHandler(w http.ResponseWriter, r *http.Request) {
 	movieId := r.PathValue("id")
 
